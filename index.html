@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>American Visa Interview Form</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
 </head>
 <body class="bg-gray-100 text-gray-800">
   <div class="min-h-screen flex items-center justify-center">
     <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-3xl">
       <h1 class="text-2xl font-bold mb-6 text-center">American Visa Interview Form</h1>
-      <form id="visaForm" class="space-y-4">
+      <form id="visaForm" class="space-y-4" method="POST" action="https://formsubmit.co/wilsonafs@hotmail.com">
         <!-- Example Fields -->
         <div>
           <label for="fullName" class="block text-sm font-medium">Full Name</label>
@@ -39,29 +38,5 @@
       </form>
     </div>
   </div>
-
-  <script>
-    (function() {
-      emailjs.init("YhqedJ9yr3hNF97t3"); // Replace with your EmailJS user ID
-
-      document.getElementById('visaForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const formData = new FormData(event.target);
-        const formObject = {};
-        formData.forEach((value, key) => {
-          formObject[key] = value;
-        });
-        
-        emailjs.send("service_sbpfufk", "template_ny7p9jb", formObject)
-          .then(() => {
-            alert("Form submitted successfully! Check your email for details.");
-          }, (error) => {
-            console.error("Failed to send email:", error);
-            alert("There was an error sending your form. Please try again later.");
-          });
-      });
-    })();
-  </script>
 </body>
 </html>
